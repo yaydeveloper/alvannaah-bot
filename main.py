@@ -32,25 +32,6 @@ def send_image(recipient_id, image_url):
     url = f"https://graph.facebook.com/v17.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
     requests.post(url, json=data, headers=headers)
 
-@app.route("/", methods=["GET"])
-def verify():
-    if request.args.get("hub.verify_token") == VERIFY_TOKEN:
-        return request.args.get("hub.challenge")
-    return "Invalid verification token"
-
-@app.route("/", methods=["POST"])
-def webhook():
-    data = request.json
-    for entry in data.get("entry", []):
-        for messaging_event in entry.get("messaging", []):
-            if "message" in messaging_event and "text" in messaging_event["message"]:
-                sender_id = messaging_event["sender"]["id"]
-                message_text = messaging_event["message"]["text"].lower()
-                if "tamanna" in message_text:
-                    img_url = random.choice(TAMANNA_IMAGES)
-                    send_image(sender_id, img_url)
-    return "OK", 200
-    
 @app.route('/', methods=['GET', 'HEAD'])
 def verify():
     return "Alvannaah Bot is live! ✅"
