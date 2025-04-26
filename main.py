@@ -50,6 +50,10 @@ def webhook():
                     img_url = random.choice(TAMANNA_IMAGES)
                     send_image(sender_id, img_url)
     return "OK", 200
+    
+@app.route('/', methods=['GET', 'HEAD'])
+def verify():
+    return "Alvannaah Bot is live! ✅"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
