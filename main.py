@@ -3,8 +3,8 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = os.getenv('PAGE_ACCESS_TOKEN')
-VERIFY_TOKEN = os.getenv('VERIFY_TOKEN')
+PAGE_ACCESS_TOKEN = os.getenv('EAAQ3tNx3kz0BO4Sz6Hb79eZBy19kfmb2iNgvZCZBxeNVkORZC9ng4HQ1KGgUkePilf1jZBfE2bY67uPNyMqruKDKn9jZATuPkeL9W2iZCBBj6INLyhebL77KZCqhZAeAek8HZB1xZC9oPYUqf5keZC7W6FNZC1aNNUBnD10ZAFaLZAQIyNX1mpqnfG5bHVZCRaXXBmiXLQZDZD')
+VERIFY_TOKEN = os.getenv('alvibot123')
 
 # Tamannaah Images
 TAMANNA_IMAGES = [
